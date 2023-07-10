@@ -35,7 +35,7 @@
           <p>{{subject2.location}}</p>
           <p>Price: {{subject2.price}}</p>
           <p>Spaces: {{subject2.spaces}}</p>
-          <input type="button" id="addSelected" value="Add to Basket" v-on:click="Selected" />
+          <input type="button" id="addSelected" value="Add to Basket" v-on:click="Selected2" />
         </div>
       </div>
       </div>
@@ -70,6 +70,14 @@
               this.subject.spaces -= 1;
             } else {
               this.subject.spaces = "No spaces";
+            }
+          },
+          Selected2: function () {
+            //check if there are free spaces left
+            if (this.subject2.spaces > 0) {
+              this.subject2.spaces -= 1;
+            } else {
+              this.subject2.spaces = "No spaces";
             }
           },
         },
