@@ -2,15 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CW1 - Group Work </title>
-    
     <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+    
   </head>
-
+  
   <body>
+    <div id="app">
+      <h1>After School Activities</h1>
 
+      <img id="img" v-bind:src="subject.imgSRC" v-bind:alt="subject.imgALT" />
+      <div class="right">
+        <h3>{{subject.subject}}</h3>
+        <p>{{subject.location}}</p>
+        <p>Price: {{subject.price}}</p>
+        <p>Spaces: {{subject.spaces}}</p>
+        <input class="basketbt" type="button" id="addToBasket" value="Add to Basket" v-on:click="toBasket" />
+      </div>
+    </div>
+
+    <script>
+
+      let app = new Vue({
+      
+        el: "#app",
+        data: {
+          subject: {
+            imgALT: "English img",
+            imgSRC: "book-english.png",
+            subject: "English",
+            location: "London",
+            price: 90.35,
+            spaces: 12,
+          },
+        }, // this is the 'data' option, its value is a JSON object
+        methods: {
+          toBasket: function () {
+            //check if there are free spaces left
+            if (this.subject.spaces > 0) {
+              this.subject.spaces -= 1;
+            } else {
+              this.subject.spaces = "No spaces";
+            }
+          },
+        },
+      });
+
+      </script>
   </body>
 </html>
