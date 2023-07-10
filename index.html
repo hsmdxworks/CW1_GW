@@ -10,16 +10,20 @@
   </head>
   
   <body>
-    <div id="app">
-      <h1>After School Activities</h1>
+    
 
-      <img id="img" v-bind:src="subject.imgSRC" v-bind:alt="subject.imgALT" />
-      <div class="right">
-        <h3>{{subject.subject}}</h3>
-        <p>{{subject.location}}</p>
-        <p>Price: {{subject.price}}</p>
-        <p>Spaces: {{subject.spaces}}</p>
-        <input class="basketbt" type="button" id="addToBasket" value="Add to Basket" v-on:click="toBasket" />
+    <div class="container basketbt">
+      <div id="app">
+        <h1>After School Activities</h1>
+  
+        <img id="img" v-bind:src="subject.imgSRC" v-bind:alt="subject.imgALT" width="30%" />
+        <div class="right">
+          <h3>{{subject.subject}}</h3>
+          <p>{{subject.location}}</p>
+          <p>Price: {{subject.price}}</p>
+          <p>Spaces: {{subject.spaces}}</p>
+          <input class="basketbt" type="button" id="addSelected" value="Add to Basket" v-on:click="Selected" />
+        </div>
       </div>
     </div>
 
@@ -34,12 +38,12 @@
             imgSRC: "book-english.png",
             subject: "English",
             location: "London",
-            price: 90.35,
             spaces: 12,
+            price: 90.35,
           },
-        }, // this is the 'data' option, its value is a JSON object
+        }, 
         methods: {
-          toBasket: function () {
+          Selected: function () {
             //check if there are free spaces left
             if (this.subject.spaces > 0) {
               this.subject.spaces -= 1;
@@ -51,5 +55,6 @@
       });
 
       </script>
+
   </body>
 </html>
