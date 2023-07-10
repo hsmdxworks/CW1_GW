@@ -1,25 +1,46 @@
 #app{
-width: 300px;
-height: 300px;
-border-radius: 30px;
-background-color: antiquewhite;
-padding: 20px;
+
 }
+
+
 #img{
-    width: 50%;
-    background-color:rgba(255, 99, 71, 0.466);
-    border-radius: 20px;
+    width:250px;
+    border-radius: 10px;
     float: left;
 }
 .container{
-float: center;
-text-align: center;
-font-size: larger;
+    float: center;
+    text-align: center;
+    width: 450px;
+    font-size: larger;
+    border-radius: 30px;
+background-color: rgb(33, 197, 88);
+padding: 20px;
 }
-.basketbt{
+
+.left{
+    
+    text-align: left !important;
+    
+}
+
+#addSelected{
+    border-radius: 2px;
+    border: 1px dotted darkorange;
+    color: rgb(0, 0, 0);
+    background-color: orange;
+    height: 30px;
+}
+
+.head{
+    font-family: 'Courier New', Courier, monospace;
+    float: center;
+    text-align: center;
+    font-size: larger;
     border: 2px;
     border-radius: 10px;
-    height: 35px;
-    color: rgb(195, 89, 89);
-    background-color:rgb(107, 107, 117) ;
+    padding:10px;
+    height: 100px;
+    color: rgb(255, 255, 255);
+    background-color:rgb(71, 71, 197) ;
 }
