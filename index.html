@@ -14,8 +14,8 @@
 
     <div class="head"><h1>After School Activities</h1></div>
     <br>
-    <div class="container ">
-      <div id="app">
+    <div id="app">
+        <div class="container ">
         <img id="img" v-bind:src="subject.imgSRC" v-bind:alt="subject.imgALT" width="30%" />
         <div class="left">
           <h3>{{subject.subject}}</h3>
@@ -24,9 +24,22 @@
           <p>Spaces: {{subject.spaces}}</p>
           <input type="button" id="addSelected" value="Add to Basket" v-on:click="Selected" />
         </div>
+        </div>
+        
+      <br>
+      <div class="container ">
+        
+        <img id="img" v-bind:src="subject2.imgSRC" v-bind:alt="subject2.imgALT" width="30%" />
+        <div class="left">
+          <h3>{{subject2.subject}}</h3>
+          <p>{{subject2.location}}</p>
+          <p>Price: {{subject2.price}}</p>
+          <p>Spaces: {{subject2.spaces}}</p>
+          <input type="button" id="addSelected" value="Add to Basket" v-on:click="Selected" />
+        </div>
       </div>
-    </div>
-
+      </div>
+  
 
     <script>
       let app = new Vue({  
@@ -40,6 +53,15 @@
             spaces: 12,
             price: 90.35,
           },
+          subject2:{
+            imgALT: "Hindi img",
+            imgSRC: "book-english.png",
+            subject: "Hindi",
+            location: "London",
+            spaces: 2,
+            price: 30.15,
+          }
+          
         }, 
         methods: {
           Selected: function () {

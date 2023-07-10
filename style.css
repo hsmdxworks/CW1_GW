@@ -25,11 +25,11 @@ padding: 20px;
 }
 
 #addSelected{
-    border-radius: 2px;
+    border-radius: 5px;
     border: 1px dotted darkorange;
     color: rgb(0, 0, 0);
-    background-color: orange;
-    height: 30px;
+    background-color: darkorange;
+    height: 40px;
 }
 
 .head{
